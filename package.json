@@ -1,0 +1,20 @@
+{
+  "name": "em-bower",
+  "version": "0.0.0",
+  "description": "Wrap DOM element inside a template",
+  "homepage": "https://github.com/bahrus/em-bower#readme",
+  "bugs": {
+    "url": "https://github.com/bahrus/em-bower/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahrus/em-bower.git"
+  },
+  "license": "MIT",
+  "author": "Bruce B. Anderson <anderson.bruce.b@gmail.com>",
+  "type": "module",
+  "main": "em-bower.js",
+  "scripts": {
+    "test": "test playwright"
+  }
+}
