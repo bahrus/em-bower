@@ -16,14 +16,13 @@ class EmBower extends BE {
      * @type {BEConfig<BAP, Actions & IEnhancement>}
      */
     static config = {
-        propDefaults: {
-        },
         propInfo: {
             ...propInfo,
+            path: {}
         },
         positractions: [resolved, rejected],
-        actions: {
-
+        compacts: {
+            when_path_changes_call_act: 0,
         }
     };
 
