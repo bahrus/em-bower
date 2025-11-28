@@ -92,8 +92,13 @@ class EmBower extends BE {
         if (!slot) throw 404;
 
         enhancedElement.after(clone);
-
-        slot.after(enhancedElement);
+        const parentOfSlot = slot.parentElement;
+        if(parentOfSlot && 'moveBefore' in parentOfSlot){
+            parentOfSlot.moveBefore(enhancedElement, slot);
+        }else{
+            slot.after(enhancedElement);
+        }
+        
         slot.remove();
 
         
