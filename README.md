@@ -1,5 +1,9 @@
 # em-bower
 
+What *em-bower* does is take the following HTML:
+
+
+
 ```html
 <template id=myWrappingContent>
     <fieldset>
@@ -10,9 +14,9 @@
         </label>
     </fieldset>
 </template>
-```
 
-```html
+...
+
 <select 
     data-label=Country
     em-bower=#myWrappingContent>
@@ -27,7 +31,7 @@
 </select>
 ```
 
-does the following:
+and does the following:
 
 1.  Clones the "myWrappingContent" template.
 2.  Substitutes in values from the select element properties into the double brace expressions.
