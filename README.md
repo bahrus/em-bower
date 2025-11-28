@@ -1,5 +1,7 @@
 # em-bower
 
+Surround the adorned element by a common, reusable template.
+
 What *em-bower* does is take the following HTML:
 
 

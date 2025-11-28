@@ -1,6 +1,14 @@
 {
   "name": "em-bower",
   "version": "0.0.0",
+  "keywords": [
+    "web-components",
+    "web-component",
+    "custom-element",
+    "custom-elements",
+    "enhancement",
+    "behavior"
+  ],
   "description": "Wrap DOM element inside a template",
   "homepage": "https://github.com/bahrus/em-bower#readme",
   "bugs": {
