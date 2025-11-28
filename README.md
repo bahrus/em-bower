@@ -1,1 +1,34 @@
 # em-bower
+
+```html
+<template id=myWrappingContent>
+    <fieldset>
+        <legend>{{dataset.label}}</legend>
+        <label>
+            <span>{{dataset.label}}</span>
+        <slot></slot>
+    </fieldset>
+</template>
+```
+
+```html
+<select 
+    data-label=Country
+    em-bower=#myWrappingContent>
+    <option value="">Select a country</option>
+    <option value="us">United States</option>
+    <option value="uk">United Kingdom</option>
+    <option value="ca">Canada</option>
+    <option value="au">Australia</option>
+    <option value="de">Germany</option>
+    <option value="fr">France</option>
+    <option value="jp">Japan</option>
+</select>
+```
+
+does the following:
+
+1.  Clones the "myWrappingContent" template.
+2.  Inserts the clone right after the select element.
+3.  Moves the select element right after the slot element.
+4.  Deletes the slot element.
