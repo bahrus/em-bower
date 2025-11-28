@@ -6,8 +6,28 @@ import {dispatchEvent as de} from 'trans-render/positractions/dispatchEvent.js';
 /** @import {Actions, PAP, AllProps, AP, BAP} from './ts-refs/em-bower/types' */;
 
 
-
-
+/**
+ * @implements {Actions}
+ * 
+ */
 class EmBower extends BE {
+    /**
+     * @type {BEConfig<BAP, Actions & IEnhancement>}
+     */
+    static config = {
+        propDefaults: {
+        },
+        propInfo: {
+            ...propInfo,
+        },
+        positractions: [resolved, rejected],
+        actions: {
+            
+        }
+    };
 
+    de = de;
 }
+
+await EmBower.bootUp();
+export {EmBower};
