@@ -21,7 +21,7 @@ What *em-bower* does is take the following HTML:
 
 <select 
     data-label=Country
-    em-bower=#myWrappingContent>
+    em-bower=myWrappingContent>
     <option value="">Select a country</option>
     <option value="us">United States</option>
     <option value="uk">United Kingdom</option>
