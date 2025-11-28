@@ -1,6 +1,6 @@
 {
   "name": "em-bower",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "keywords": [
     "web-components",
     "web-component",
@@ -38,5 +38,4 @@
   "author": "Bruce B. Anderson <anderson.bruce.b@gmail.com>",
   "type": "module",
   "main": "em-bower.js"
-
 }
