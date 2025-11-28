@@ -30,9 +30,10 @@
 does the following:
 
 1.  Clones the "myWrappingContent" template.
-2.  Inserts the clone right after the select element.
-3.  Moves the select element right after the slot element.
-4.  Deletes the slot element.
+2.  Substitutes in values from the select element properties into the double brace expressions.
+3.  Inserts the clone right after the select element.
+4.  Moves the select element right after the slot element.
+5.  Deletes the slot element.
 
 So the markup above results in:
 
