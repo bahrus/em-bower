@@ -64,6 +64,17 @@ So the markup above results in:
 </fieldset>
 ```
 
+## Compact alternative name
+
+It is easy to define alternative names for the attribute.  This package contains one such alternative name:  😶‍🌫️:
+
+```html
+<select 
+    😶‍🌫️=myWrappingContent>
+    ...
+</select>
+```
+
 > [!NOTE]
 > A vscode extension to make navigation from the element adorned by the em-bower attribute to the target element [is available](https://marketplace.visualstudio.com/items?itemName=andersonbruceb.idref).
 
