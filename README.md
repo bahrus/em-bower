@@ -78,6 +78,38 @@ It is easy to define alternative names for the attribute.  This package contains
 > [!NOTE]
 > A vscode extension to make navigation from the element adorned by the em-bower attribute to the target element [is available](https://marketplace.visualstudio.com/items?itemName=andersonbruceb.idref).
 
+## Remote templates
+
+To pull in wrapper from an external html link, this must be mapped via import maps:
+
+```html
+<html>
+    <head>
+        <script type=importmap >
+        {
+            "imports": {
+                "em-bower/": "/"
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <select 
+            data-label=Country
+            😶‍🌫️-src="em-bower/demo/template.html">
+            <option value="">Select a country</option>
+            <option value="us">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="ca">Canada</option>
+            <option value="au">Australia</option>
+            <option value="de">Germany</option>
+            <option value="fr">France</option>
+            <option value="jp">Japan</option>
+    </select>
+    </body>
+</html>
+```
+
 [TODO]
 
 1.  Support binding to things other than data-*
