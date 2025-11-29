@@ -11,13 +11,18 @@
 </head>
 <body>
     <template id=myWrappingContent>
-        <fieldset>
+        <fieldset class=select-wrapper>
             <legend>{{dataset.label}}</legend>
             <label>
                 <span>{{dataset.label}}</span>
                 <slot></slot>
             </label>
         </fieldset>
+        <style>
+            .select-wrapper legend {
+                display: none;
+            }
+        </style>
     </template>
 
     <select 
