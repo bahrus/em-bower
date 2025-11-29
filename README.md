@@ -1,8 +1,8 @@
 # em-bower (WIP)
 
-Surround the adorned element by from content from a common, reusable template.
+Surround the adorned element with content from a common, reusable template.
 
-What *em-bower* does is take the following HTML:
+Specifically, what *em-bower* does is it takes the following HTML:
 
 
 
@@ -15,8 +15,6 @@ What *em-bower* does is take the following HTML:
             <slot></slot>
         </label>
     </fieldset>
-    <style>
-    </style>
 </template>
 
 ...
@@ -71,5 +69,4 @@ So the markup above results in:
 
 [TODO]
 
-1.  Support style 
-2.  Support em-bower-h that points to importmap
+1.  Support em-bower-h that points to importmap
