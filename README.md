@@ -80,5 +80,4 @@ It is easy to define alternative names for the attribute.  This package contains
 
 [TODO]
 
-1.  Support em-bower-h that points to importmap
-2.  Support binding to things other than data-*
+1.  Support binding to things other than data-*

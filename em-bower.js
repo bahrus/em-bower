@@ -14,6 +14,9 @@ const styleLookup = new WeakMap();
 
 const rnGuid = Symbol.for('NFweAigLiEKNat98Vdnf5w');
 
+/** @type {Map<string, HTMLTemplateElement>} */
+const remoteTemplateLookup = new Map();
+
 /**
  * @implements {Actions}
  * 
@@ -27,15 +30,48 @@ class EmBower extends BE {
             ...propInfo,
             path: {},
             template: {},
+            src: {},
         },
         positractions: [resolved, rejected],
         compacts: {
             when_path_changes_call_upShadowSearch: 0,
             when_template_changes_call_act: 0,
+            when_src_changes_call_fetchRemoteTemplate: 0,
         }
     };
 
     de = de;
+
+
+    /**
+     * 
+     * @param {BAP} self 
+     * @returns 
+     */
+    async fetchRemoteTemplate(self){
+        const {src, enhancedElement} = self;
+        const cachedTemplate = remoteTemplateLookup.get(src);
+        if(cachedTemplate) return /** @type {PAP} */ ({
+            template: cachedTemplate
+        });
+        // Resolve the path using import map
+        const resolvedPath = resolveWithImportMap(src);
+        
+        // Fetch the HTML file
+        const response = await fetch(resolvedPath);
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch ${resolvedPath}: ${response.status} ${response.statusText}`);
+        }
+    
+        const html = await response.text();
+        const template = document.createElement('template');
+        template.innerHTML = html;
+        remoteTemplateLookup.set(src, template);
+        return /** @type {PAP} */ ({
+            template
+        });
+    }
 
     /**
      * 
@@ -162,3 +198,43 @@ class EmBower extends BE {
 
 await EmBower.bootUp();
 export { EmBower };
+
+//TODO:  take from imp-h -- maybe should put in trans-render
+
+/**
+ * Resolves a path using the import map if available
+ * @param {string} specifier - The import specifier (e.g., "my-package/root.html")
+ * @returns {string} The resolved URL
+ */
+function resolveWithImportMap(specifier) {
+  // Get the import map from the document
+  const importMapScripts = Array.from(document.querySelectorAll('script[type="importmap"]'));
+  
+  if (importMapScripts.length === 0) {
+    // No import map, return specifier as-is
+    return specifier;
+  }
+  
+  for(const importMapScript of importMapScripts){
+    const importMap = JSON.parse(importMapScript.textContent);
+    const imports = importMap.imports || {};
+    
+    // Check for exact match first
+    if (imports[specifier]) {
+      return imports[specifier];
+    }
+    
+    // Check for prefix matches (e.g., "my-package/" mapping)
+    for (const [key, value] of Object.entries(imports)) {
+      if (key.endsWith('/') && specifier.startsWith(key)) {
+        // Replace the prefix with the mapped value
+        return specifier.replace(key, value);
+      }
+    }
+  }
+
+    
+  // No match found, return original specifier
+  return specifier;
+  
+}
