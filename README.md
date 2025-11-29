@@ -65,4 +65,4 @@ So the markup above results in:
 ```
 
 > [!NOTE]
-> A vscode extension is available to make navigation from the element adorned by the em-bower attribute to the target element [is available](https://marketplace.visualstudio.com/items?itemName=andersonbruceb.idref).
+> A vscode extension to make navigation from the element adorned by the em-bower attribute to the target element [is available](https://marketplace.visualstudio.com/items?itemName=andersonbruceb.idref).
