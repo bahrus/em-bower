@@ -1,6 +1,6 @@
-# em-bower
+# em-bower (WIP)
 
-Surround the adorned element by a common, reusable template.
+Surround the adorned element by from content from a common, reusable template.
 
 What *em-bower* does is take the following HTML:
 
@@ -15,6 +15,8 @@ What *em-bower* does is take the following HTML:
             <slot></slot>
         </label>
     </fieldset>
+    <style>
+    </style>
 </template>
 
 ...
@@ -50,7 +52,7 @@ So the markup above results in:
         <span>Country</span>
         <select 
             data-label=Country
-            em-bower=#myWrappingContent>
+            em-bower=myWrappingContent>
             <option value="">Select a country</option>
             <option value="us">United States</option>
             <option value="uk">United Kingdom</option>
@@ -66,3 +68,8 @@ So the markup above results in:
 
 > [!NOTE]
 > A vscode extension to make navigation from the element adorned by the em-bower attribute to the target element [is available](https://marketplace.visualstudio.com/items?itemName=andersonbruceb.idref).
+
+[TODO]
+
+1.  Support style 
+2.  Support em-bower-h that points to importmap
