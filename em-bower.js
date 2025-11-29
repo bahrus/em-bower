@@ -25,11 +25,13 @@ class EmBower extends BE {
     static config = {
         propInfo: {
             ...propInfo,
-            path: {}
+            path: {},
+            template: {},
         },
         positractions: [resolved, rejected],
         compacts: {
-            when_path_changes_call_act: 0,
+            when_path_changes_call_upShadowSearch: 0,
+            when_template_changes_call_act: 0,
         }
     };
 
@@ -38,12 +40,25 @@ class EmBower extends BE {
     /**
      * 
      * @param {BAP} self 
+     * @returns 
      */
-    act(self) {
+    upShadowSearch(self){
         const { path, enhancedElement } = self;
         // Get the template selector from em-bower attribute
         const template = upShadowSearch(enhancedElement, path);
         if (!(template instanceof HTMLTemplateElement)) throw 404;
+        return /** @type {PAP} */ ({
+            template
+        });
+    }
+
+    /**
+     * 
+     * @param {BAP} self 
+     */
+    act(self) {
+        const { template, enhancedElement } = self;
+
 
         if(!cleansed.has(template)){
             cleansed.add(template);

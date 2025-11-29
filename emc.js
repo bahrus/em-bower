@@ -8,10 +8,15 @@ import { BeHive, seed, MountObserver } from 'be-hive/be-hive.js';
  */
 export const emc = {
     base: 'em-bower',
+    branches: ['', 'src'],
     map: {
         '0.0': {
             instanceOf: 'String',
             mapsTo: 'path',
+        },
+        '1.0': {
+            instanceOf: 'String',
+            mapsTo: 'src',
         }
     },
     enhPropKey: 'emBower',
