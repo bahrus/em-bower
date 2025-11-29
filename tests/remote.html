@@ -20,7 +20,7 @@
 
     <select 
         data-label=Country
-        😶‍🌫️-src="em-bower/demo/template.html">
+        😶‍🌫️-src="em-bower/tests/template.html">
         <option value="">Select a country</option>
         <option value="us">United States</option>
         <option value="uk">United Kingdom</option>
@@ -30,5 +30,19 @@
         <option value="fr">France</option>
         <option value="jp">Japan</option>
     </select>
+
+        <div id='target'></div>
+
+    <script>
+        function runTest(){
+            if(document.querySelector('legend')){
+                target.setAttribute('mark', 'good');
+            }
+        }
+
+        setTimeout(() => {
+            runTest();
+        }, 500)
+    </script>
 </body>
 </html>
