@@ -4,7 +4,10 @@ Surround the adorned element with content from a common, reusable template.
 
 Specifically, what *em-bower* does is it takes the following HTML:
 
-
+[![Playwright Tests](https://github.com/bahrus/em-bower/actions/workflows/CI.yml/badge.svg?branch=baseline)](https://github.com/bahrus/em-bower/actions/workflows/CI.yml)
+[![NPM version](https://badge.fury.io/js/em-bower.png)](http://badge.fury.io/js/em-bower)
+[![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/em-bower?style=for-the-badge)](https://bundlephobia.com/result?p=em-bower)
+<img src="http://img.badgesize.io/https://cdn.jsdelivr.net/npm/em-bower?compression=gzip">
 
 ```html
 <template id=myWrappingContent>
@@ -116,3 +119,29 @@ To pull in wrapper from an external html link, this must be mapped via import ma
 [TODO]
 
 1.  Support binding to things other than data-*
+
+## Viewing Locally
+
+Any web server that serves static files (html, css, js) will do but...
+
+1.  Install git.
+2.  Fork/clone this repo.
+3.  Install node.
+4.  Open command window to folder where you cloned this repo.
+5.  > npm install
+6.  > npm run serve
+7.  Open http://localhost:8000/demo in a modern browser.
+
+## Importing in ES Modules:
+
+```JavaScript
+import 'em-bower/em-bower.js';
+```
+
+## Using from CDN:
+
+```html
+<script type=module crossorigin=anonymous>
+    import 'https://esm.run/em-bower';
+</script>
+```
