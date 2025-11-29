@@ -1,4 +1,4 @@
-# em-bower (WIP)
+# em-bower (😶‍🌫️) (WIP)
 
 Surround the adorned element with content from a common, reusable template.
 
