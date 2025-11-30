@@ -148,9 +148,10 @@ class EmBower extends BE {
                     // Process text nodes for {{}} expressions
                     const text = node.textContent;
                     if (text !== null) {
-                        const substituted = text.replace(/\{\{dataset\.(\w+)\}\}/g, (match, key) => {
-                            return enhancedElement.dataset[key] || '';
-                        });
+                        // const substituted = text.replace(/\{\{dataset\.(\w+)\}\}/g, (match, key) => {
+                        //     return enhancedElement.dataset[key] || '';
+                        // });
+                        const substituted = replacePlaceholders(text, enhancedElement);
                         if (text !== substituted) {
                             node.textContent = substituted;
                         }
@@ -163,9 +164,8 @@ class EmBower extends BE {
                          * @type {string}
                          */
                         const value = attr.value;
-                        const substituted = value.replace(/\{\{dataset\.(\w+)\}\}/g, (match, key) => {
-                            return enhancedElement.dataset[key] || '';
-                        });
+                        // 
+                        const substituted = replacePlaceholders(value, enhancedElement);
                         if (value !== substituted) {
                             attr.value = substituted;
                         }
@@ -198,6 +198,24 @@ class EmBower extends BE {
 
 await EmBower.bootUp();
 export { EmBower };
+
+/**
+ * 
+ * @param {string} txtExpression 
+ * @param {any} obj 
+ * @returns 
+ */
+function replacePlaceholders(txtExpression, obj) {
+  return txtExpression.replace(/\{\{([^}]+)\}\}/g, (match, path) => {
+    // Split the path by dots and traverse the object
+    const value = path.trim().split('.').reduce((current, prop) => {
+      return current?.[prop];
+    }, obj);
+    
+    // Return the value if found, otherwise return the original placeholder
+    return value !== undefined ? value : match;
+  });
+}
 
 //TODO:  take from imp-h -- maybe should put in trans-render
 
