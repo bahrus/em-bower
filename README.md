@@ -1,4 +1,4 @@
-# em-bower (😶‍🌫️) (WIP)
+# em-bower (😶‍🌫️)
 
 Surround the adorned element with content from a common, reusable template.
 
@@ -115,10 +115,6 @@ To pull in wrapper from an external html link, this must be mapped via import ma
 
 > [!NOTE]
 > Another [vs code extension](https://marketplace.visualstudio.com/items?itemName=andersonbruceb.custom-link-attributes) is available that specializes in supporting the em-bower-src/😶‍🌫️-src navigation to the source document.
-
-[TODO]
-
-1.  Support binding to things other than data-*
 
 ## Viewing Locally
 
